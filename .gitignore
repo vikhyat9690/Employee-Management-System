@@ -2,4 +2,4 @@
 config/db.php
 
 # Ignore the profilePic folder and its contents in the assets directory
-assets/profilePic/
+assets/profilePics/
