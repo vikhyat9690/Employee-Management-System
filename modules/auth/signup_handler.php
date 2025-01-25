@@ -25,7 +25,7 @@
 
     //Handle profile picture upload
     $profile_picture = $_FILES['profile_picture'];
-    $upload_dir = '../../assets/profielPics/uploads/';
+    $upload_dir = '../../assets/profilePics/uploads/';
     if (!is_dir($upload_dir)) {
         mkdir($upload_dir, 0777, true); // Create directory with appropriate permissions
     }
