@@ -6,9 +6,9 @@ function uploadFile($file, $upload_dir) {
     }
 
     // Validate file type
-    $allowed_types = ['image/jpeg', 'image/png', 'image/gif'];
+    $allowed_types = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
     if (!in_array($file['type'], $allowed_types)) {
-        die("Invalid file type. Only JPEG, PNG, and GIF files are allowed.");
+        die("Invalid file type. Only JPEG, PNG, WEBP and GIF files are allowed.");
     }
 
     // Validate file size (e.g., max 2MB)
@@ -29,7 +29,8 @@ function uploadFile($file, $upload_dir) {
         die("Failed to upload file.");
     }
 
-    // Return the file path for storage in the database
+    // Return the file path for storage in the database (relative path for web access)
     return $target_file;
 }
+
 ?>

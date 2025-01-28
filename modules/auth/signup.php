@@ -1,62 +1,74 @@
-<?php
-include('../../includes/header.php');
-?>
 
 <title>Signup</title>
-<link rel="stylesheet" href="../../assets/style/auth.css">
-<div class="main-container">
-    <h1> Signup </h1>
-    <form id="signupForm" method="POST" action="signup_handler.php" enctype="multipart/form-data">
-        <label for="full_name">Full Name:</label>
-        <input type="text" id="full_name" name="full_name" required><br>
+<link rel="stylesheet" href="../../assets/style/signup.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Signup to Employee Management System</h2>
+            <form method="POST" action="signup_handler.php" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="full_name">Full Name:</label>
+                    <input type="text" name="full_name" placeholder="Enter your full name" required>
+                </div>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                </div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" placeholder="Create a password" required>
+                </div>
 
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" required><br>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" name="age" placeholder="Enter your age" required>
+                </div>
 
-        <label>Qualifications:</label>
-        <div id="qualifications">
-            <input type="text" name="qualifications[]" placeholder="Qualification">
-            <button type="button" id="addQualification">Add</button>
-        </div><br>
+                <div class="form-group">
+                    <label>Qualifications:</label>
+                    <div class="dynamic-fields">
+                        <input type="text" name="qualifications[]" placeholder="Enter a qualification">
+                        <button type="button" class="add-button">+</button>
+                    </div>
+                </div>
 
-        <label>Experiences:</label>
-        <div id="experiences">
-            <input type="text" name="experiences[]" placeholder="Experience">
-            <button type="button" id="addExperience">Add</button>
-        </div><br>
+                <div class="form-group">
+                    <label>Experiences:</label>
+                    <div class="dynamic-fields">
+                        <input type="text" name="experiences[]" placeholder="Enter an experience">
+                        <button type="button" class="add-button">+</button>
+                    </div>
+                </div>
 
-        <div class="address">
-            <label for="permanent_address">Permanent Address:</label>
-            <div class="permanent">
-                <input type="text" name="permanent_address_line1" placeholder="Line 1" required>
-                <input type="text" name="permanent_address_line2" placeholder="Line 2">
-                <input type="text" name="permanent_city" placeholder="City" required>
-                <input type="text" name="permanent_state" placeholder="State" required><br>
-            </div>
+                <div class="form-group">
+                    <label>Permanent Address:</label>
+                    <input type="text" name="permanent_address_line1" placeholder="Line 1" required>
+                    <input type="text" name="permanent_address_line2" placeholder="Line 2">
+                    <input type="text" name="permanent_city" placeholder="City" required>
+                    <input type="text" name="permanent_state" placeholder="State" required>
+                </div>
 
-            <label for="permanent_address">Permanent Address:</label>
-            <div class="current">
-                <input type="text" name="permanent_address_line1" placeholder="Line 1" required>
-                <input type="text" name="permanent_address_line2" placeholder="Line 2">
-                <input type="text" name="permanent_city" placeholder="City" required>
-                <input type="text" name="permanent_state" placeholder="State" required><br>
-            </div>
+                <div class="form-group">
+                    <label>Current Address:</label>
+                    <input type="text" name="current_address_line1" placeholder="Line 1" required>
+                    <input type="text" name="current_address_line2" placeholder="Line 2">
+                    <input type="text" name="current_city" placeholder="City" required>
+                    <input type="text" name="current_state" placeholder="State" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="profile_picture">Profile Picture:</label>
+                    <input type="file" name="profile_picture" accept="image/*" required>
+                </div>
+
+                <button type="submit" class="submit-button">Signup</button>
+                <p>Already an employee? <a href="login.php">Login</a></p>
+            </form>
         </div>
+    </div>
+    <?php include_once "../../includes/footer.php"; ?>
 
-        <label for="profile_picture">Profile Picture:</label>
-        <input type="file" id="profile_picture" name="profile_picture" accept="image/*" required><br>
-
-        <button type="submit">Signup</button>
-        <p style="text-align: center;">Already an employee? <a href="login.php">Login</a></p>
-    </form>
-</div>
-
-<script src="../../assets/js/script.js"></script>
-
-<?php include('../../includes/footer.php'); ?>
+    
