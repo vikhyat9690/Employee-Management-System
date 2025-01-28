@@ -1,6 +1,11 @@
 <?php
+session_start();
+
 // Include the database connection
 include('../../config/db.php');
+include_once "../../config/middleware.php";
+
+isAuthenticated();
 
 // Fetch employees from the database
 $sql = "SELECT * FROM users";  // Assuming 'employees' is the table where employee information is stored

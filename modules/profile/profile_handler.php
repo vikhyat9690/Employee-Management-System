@@ -1,6 +1,9 @@
 <?php
-include "../../config/db.php";
 session_start();
+include "../../config/db.php";
+include_once "../../config/middleware.php";
+
+isAuthenticated();
 
 if (!isset($_SESSION['user_id'])) {
     echo json_encode(['success' => false, 'message' => 'Unauthorized']);
