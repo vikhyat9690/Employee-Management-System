@@ -67,6 +67,9 @@ form {
     display: flex;
     flex-direction: column;
     width: 40%;
+    margin-top: 7%;
+    box-shadow: 0 5px 10px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
 }
 
 .form-group {
@@ -141,4 +144,28 @@ footer a:hover {
     align-items: center;
 }
 
+table {
+    width: 80%;
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px 10px rgba(0, 0, 0, 0.1);
+}
 
+td{
+    padding: 10px;
+}
+
+th{
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    background: #2f4f4f;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+a:hover {
+    background: #1c2d2d;
+}

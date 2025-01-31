@@ -38,8 +38,8 @@ $user = $stmt->get_result()->fetch_assoc();
         </ul>
     </nav>
     <div class="main-container">
-        <h1>Manage User</h1>
         <form action="manage_user_handler.php" method="POST">
+            <h1>Manage User</h1>
             <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
             <label>Full Name:</label>
             <input type="text" name="full_name" value="<?php echo htmlspecialchars($user['full_name']); ?>" required><br>
