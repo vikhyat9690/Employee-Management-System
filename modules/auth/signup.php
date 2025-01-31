@@ -65,7 +65,7 @@
                 </div>
 
                 <button type="submit" class="submit-button">Signup</button>
-                <p>Already an employee? <a href="/login">Login</a></p>
+                <p>Already an employee? <a href="login.php">Login</a></p>
             </form>
         </div>
     </div>
