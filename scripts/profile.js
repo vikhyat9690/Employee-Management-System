@@ -6,6 +6,7 @@ $(document).ready(function () {
         const newValue = prompt(`Enter new ${field.replace('_', ' ')}:`, currentValue);
 
         if (newValue !== null && newValue !== currentValue) {
+            
             $.ajax({
                 url: '../../modules/profile/profile_handler.php',
                 method: 'POST',
@@ -74,33 +75,28 @@ $(document).ready(function () {
         });
     });
 
-        // Update profile picture
-        $('#updatePictureBtn').on('click', function () {
-            const fileInput = $(this)[0];
-            const file = fileInput.files[0];
+
+    // Update profile picture
+    document.getElementById('updatePictureForm').addEventListener('submit', function (e) {
+        e.preventDefault();
     
-            if (file) {
-                const formData = new FormData();
-                formData.append('action', 'update_field');
-                formData.append('field', 'profile_picture');
-                formData.append('value', file);
+        let formData = new FormData(this);
+        formData.append('update_picture', 'true'); // Ensure PHP handles this request
     
-                $.ajax({
-                    url: '../../modules/profile/profile_handler.php',
-                    method: 'POST',
-                    data: formData,
-                    processData: false, // Required for FormData
-                    contentType: false, // Required for FormData
-                    success: function (response) {
-                        const res = JSON.parse(response);
-                        if (res.success) {
-                            $('#profilePicturePreview').attr('src', `path_to_images/${res.file_name}`);
-                            alert('Profile picture updated successfully!');
-                        } else {
-                            alert('Failed to update profile picture: ' + res.message);
-                        }
-                    }
-                });
+        fetch('profile_handler.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                document.getElementById('profileImage').src = "../../" + data.profile_picture;
+            } else {
+                alert(data.message);
             }
-        });
+        })
+        .catch(error => console.error('Error:', error));
+    });
+    
+        
 });

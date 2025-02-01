@@ -61,43 +61,50 @@ $experiences = $stmt->get_result();
         <div class="section profile-picture">
             <img src="../../<?php echo htmlspecialchars($user['profile_picture']); ?>" alt="Profile Picture">
             <form id="updatePictureForm" method="POST" action="profile_handler.php" enctype="multipart/form-data">
-                <input type="file" name="profile_picture" accept="image/*" required>
+                <input type="hidden" name="action" value="update_profile_picture">
+                <input id="profileImage" type="file" name="profile_picture" accept="image/*" required>
                 <button type="submit" id="updatePictureBtn" name="update_picture">Update Picture</button>
             </form>
         </div>
 
         <!-- User Details -->
         <div class="section user-info">
-            <h2>Personal Information</h2>
-            <p>Full Name: <span id="fullName"><?php echo htmlspecialchars($user['full_name']); ?></span>
+            <h2>Personal Information</h2><hr><br>
+            <p>Full Name: <span id="fullName"><?php echo htmlspecialchars($user['full_name']); ?></span>&nbsp;&nbsp;
                 <button class="edit-btn" data-field="full_name">Edit</button>
-            </p>
-            <p>Email: <?php echo htmlspecialchars($user['email']); ?> (Cannot Edit)</p>
-            <p>Age: <span id="age"><?php echo htmlspecialchars($user['age']); ?></span>
+            </p><br>
+            <p>Email: <?php echo htmlspecialchars($user['email']); ?> (Cannot Edit)</p><br>
+            <p>Age: <span id="age"><?php echo htmlspecialchars($user['age']); ?></span><br><br>
                 <button class="edit-btn" data-field="age">Edit</button>
             </p>
         </div>
 
         <!-- Address -->
         <div class="section address">
-            <h2>Permanent Address</h2>
+            <h2>Permanent Address</h2><hr><br>
             <p>
                 <?php echo htmlspecialchars($user['permanent_address_line1']); ?><br>
                 <?php echo htmlspecialchars($user['permanent_address_line2']); ?><br>
                 <?php echo htmlspecialchars($user['permanent_city']); ?>, <?php echo htmlspecialchars($user['permanent_state']); ?>
-            </p>
-            <button class="edit-btn" data-field="permanent_address">Edit</button>
+            </p><br>
+            <button class="edit-btn" data-field="permanent_address_line1">Edit line1</button>
+            <button class="edit-btn" data-field="permanent_address_line2">Edit line2</button>
+            <button class="edit-btn" data-field="permanent_city">Edit City</button>
+            <button class="edit-btn" data-field="permanent_state">Edit State</button>
         </div>
 
         <!-- Current Address -->
         <div class="section address">
-            <h2>Current Address</h2>
+            <h2>Current Address</h2><hr><br>
             <p>
                 <?php echo htmlspecialchars($user['current_address_line1']); ?><br>
                 <?php echo htmlspecialchars($user['current_address_line2']); ?><br>
                 <?php echo htmlspecialchars($user['current_city']); ?>, <?php echo htmlspecialchars($user['current_state']); ?>
-            </p>
-            <button class="edit-btn" data-field="current_address">Edit</button>
+            </p><br>
+            <button class="edit-btn" data-field="current_address_line1">Edit line1</button>
+            <button class="edit-btn" data-field="current_address_line2">Edit line2</button>
+            <button class="edit-btn" data-field="current_city">Edit city</button>
+            <button class="edit-btn" data-field="current_state">Edit state</button>
         </div>
 
         <!-- Qualifications -->
