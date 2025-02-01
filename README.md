@@ -33,6 +33,14 @@ The **Employee Management System** is a web-based application designed to manage
 - Centralized routing file for mapping URLs to handlers.
 - Clean and user-friendly URLs.
 
+### **ScreenShots**
+- [Authentication-[SignUP]](./screenshots/signup.png)
+- [Authentication-[Login]](./screenshots/login.png)
+- [Dashboard](./screenshots/dashboard.png)
+- [Profile](./screenshots/profile.png)
+- [Manage Users Panel](./screenshots/manage-users.png)
+- [Manage User Panel](./screenshots/manage-user.png)
+
 ---
 
 ## Folder Structure
