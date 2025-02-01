@@ -147,8 +147,7 @@ This project is open-source and available under the [MIT License](LICENSE).
 ---
 
 ## Contributors
-- **Your Name** - Developer
-- **Team Members** - Contributors
+- **Vikhyat Garg** - Developer
 
 ---
 
